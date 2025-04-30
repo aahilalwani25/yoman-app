@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "react-native-boilerplate",
+    "name": "react-native-ecommerce-app",
     "orientation": "portrait",
     "newArchEnabled": true,
     "userInterfaceStyle": "light",
-    "slug": "react-native-boilerplate",
+    "slug": "react-native-ecommerce-app",
     "scheme": "reactnativeboilerplate",
     "version": "1.0.0",
     "jsEngine": "hermes",
