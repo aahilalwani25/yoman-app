@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "react-native-boilerplate",
+    "orientation": "portrait",
+    "newArchEnabled": true,
+    "userInterfaceStyle": "light",
+    "slug": "react-native-boilerplate",
+    "scheme": "reactnativeboilerplate",
+    "version": "1.0.0",
+    "jsEngine": "hermes",
+    "android": {
+      "package": "com.reactnativeboilerplate"
+    },
+    "ios": {
+      "bundleIdentifier": "com.reactnativeboilerplate"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "e0e4ae58-654c-4a33-8dd2-14201f357206"
+      }
+    }
+  }
+}
