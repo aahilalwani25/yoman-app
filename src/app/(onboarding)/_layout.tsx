@@ -10,7 +10,7 @@ function RootLayout() {
         <Header/>
       )
     }}>
-      <Stack.Screen name='home'/>
+      <Stack.Screen name='index'/>
     </Stack>
   )
 }

@@ -4,7 +4,7 @@
     "orientation": "portrait",
     "newArchEnabled": true,
     "userInterfaceStyle": "light",
-    "slug": "react-native-ecommerce-app",
+    "slug": "e-commerce-app",
     "scheme": "reactnativeboilerplate",
     "version": "1.0.0",
     "jsEngine": "hermes",
@@ -15,15 +15,17 @@
       "bundleIdentifier": "com.reactnativeboilerplate"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-secure-store"
     ],
     "extra": {
       "router": {
         "origin": false
       },
       "eas": {
-        "projectId": "e0e4ae58-654c-4a33-8dd2-14201f357206"
+        "projectId": "a19f2f8f-00d8-4231-953b-65e7f5919e85"
       }
-    }
+    },
+    "owner": "aahilalwani"
   }
 }
