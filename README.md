@@ -8,7 +8,7 @@ Use the command:
 ```git clone https://github.com/aahilalwani25/react-native-expo.git```
 
 ## Renaming Project Name
-By default, the project name is ```reactnativeboilerplate```
+By default, the project name is ```reactnativeecommerceapp```
 To rename your project
 
 ## Installing the packages

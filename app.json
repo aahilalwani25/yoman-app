@@ -5,14 +5,14 @@
     "newArchEnabled": true,
     "userInterfaceStyle": "light",
     "slug": "e-commerce-app",
-    "scheme": "reactnativeboilerplate",
+    "scheme": "reactnativeecommerceapp",
     "version": "1.0.0",
     "jsEngine": "hermes",
     "android": {
-      "package": "com.reactnativeboilerplate"
+      "package": "com.ecommerceapp"
     },
     "ios": {
-      "bundleIdentifier": "com.reactnativeboilerplate"
+      "bundleIdentifier": "com.ecommerceapp"
     },
     "plugins": [
       "expo-router",
@@ -23,7 +23,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "a19f2f8f-00d8-4231-953b-65e7f5919e85"
+        "projectId": "c9ed32f5-f4d1-43b4-945e-e110f922b847"
       }
     },
     "owner": "aahilalwani"

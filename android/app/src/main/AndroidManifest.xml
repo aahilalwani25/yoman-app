@@ -24,8 +24,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.reactnativeboilerplate"/>
-        <data android:scheme="reactnativeboilerplate"/>
+        <data android:scheme="com.ecommerceapp"/>
+        <data android:scheme="reactnativeecommerceapp"/>
         <data android:scheme="exp+react-native-ecommerce-app"/>
       </intent-filter>
     </activity>
