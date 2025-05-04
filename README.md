@@ -8,7 +8,7 @@ Use the command:
 ```git clone https://github.com/aahilalwani25/react-native-expo.git```
 
 ## Renaming Project Name
-By default, the project name is ```reactnativeecommerceapp```
+By default, the project name is ```reactnativeboilerplate```
 To rename your project
 
 ## Installing the packages
@@ -22,5 +22,4 @@ Then install the packages using Yarn. Use the command:
 3. Then run: ```eas login```, it will ask username/email and password. If 2FA enabled, it will ask to give OTP. Then enter. If all creds are correct, it will give successful login message.
 4. Create Project on your expo account, copy the command ```eas init --id project-id```, and run it on your terminal
 5. Run command:```eas build:configure```
-
-
+6. ```eas build --platform android --profile preview --clear-cache```

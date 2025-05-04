@@ -1,4 +1,4 @@
-package com.ecommerceapp
+package com.reactnativeboilerplate
 
 import android.app.Application
 import android.content.res.Configuration

@@ -1,5 +1,5 @@
+package com.reactnativeboilerplate
 import expo.modules.splashscreen.SplashScreenManager
-package com.ecommerceapp
 
 import android.os.Build
 import android.os.Bundle

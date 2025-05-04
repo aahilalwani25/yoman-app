@@ -5,14 +5,14 @@
     "newArchEnabled": true,
     "userInterfaceStyle": "light",
     "slug": "e-commerce-app",
-    "scheme": "reactnativeecommerceapp",
+    "scheme": "reactnativeboilerplate",
     "version": "1.0.0",
     "jsEngine": "hermes",
     "android": {
-      "package": "com.ecommerceapp"
+      "package": "com.reactnativeboilerplate"
     },
     "ios": {
-      "bundleIdentifier": "com.ecommerceapp"
+      "bundleIdentifier": "com.reactnativeboilerplate"
     },
     "plugins": [
       "expo-router",
