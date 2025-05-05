@@ -6,7 +6,7 @@ function Layout() {
     <Stack screenOptions={{
       headerShown: false
     }}>
-        <Stack.Screen name='products'/>
+        <Stack.Screen name='home'/>
         <Stack.Screen name='product-details'/>
     </Stack>
   )

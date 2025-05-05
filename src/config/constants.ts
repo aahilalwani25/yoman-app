@@ -1,7 +1,8 @@
 export const COLORS={
     primary:{
         light:{
-            backgroundColor: ""
+            color: "#FF5500",
+            
         }
     }
 }
