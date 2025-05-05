@@ -4,7 +4,7 @@ import React from 'react';
 function Index() {
   
   return (
-    <Redirect href={'(dashboard)'}/>
+    <Redirect href={'(onboarding)'}/>
   )
 }
 

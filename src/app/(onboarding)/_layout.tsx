@@ -6,9 +6,7 @@ import { Text, View } from 'react-native'
 function RootLayout() {
   return (
     <Stack screenOptions={{
-      header:(props)=>(
-        <Header/>
-      )
+      headerShown: false
     }}>
       <Stack.Screen name='index'/>
     </Stack>
