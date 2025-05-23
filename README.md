@@ -11,6 +11,9 @@ Use the command:
 Then install the packages using Yarn. Use the command:
 ```yarn```
 
+## Build APK locally
+1. run ```npx react-native start```
+
 ## Deploy the android app on EAS
 
 1. Create your account or login
