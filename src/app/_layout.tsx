@@ -29,7 +29,7 @@ function RootLayout() {
     <GluestackUIProvider mode={"light"}>
       <PersistGate persistor={persistor}>
         <AnimatedSplashLoading isFontsLoading={loaded} error={error}>
-          <Stack screenOptions={{ headerShown: false }}>
+          <Stack screenOptions={{ headerShown: false, statusBarBackgroundColor:"black" }}>
             <Stack.Screen name="index" />
             <Stack.Screen name="(onboarding)" />
             <Stack.Screen name='(dashboard)' />

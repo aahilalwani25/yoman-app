@@ -27,6 +27,7 @@
         <data android:scheme="com.reactnativeboilerplate"/>
         <data android:scheme="reactnativeboilerplate"/>
         <data android:scheme="exp+react-native-boilerplate"/>
+        <data android:scheme="exp+e-commerce-app"/>
       </intent-filter>
     </activity>
   </application>

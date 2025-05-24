@@ -3,7 +3,8 @@
     "name": "react-native-ecommerce-app",
     "orientation": "portrait",
     "newArchEnabled": true,
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    //"backgroundColor": "#330000",
     "slug": "e-commerce-app",
     "scheme": "reactnativeboilerplate",
     "version": "1.0.0",
@@ -17,7 +18,19 @@
     "plugins": [
       "expo-router",
       "expo-secure-store",
-      "expo-font"
+      "expo-font",
+      // [
+      //   "expo-splash-screen",
+      //   {
+      //     "backgroundColor": "#232323",
+      //     "image": "./src/assets/splash-icon.png",
+      //     "dark": {
+      //       "image": "./src/assets/splash-icon.png"//,
+      //       //"backgroundColor": "#000000"
+      //     },
+      //     "imageWidth": 200
+      //   }
+      // ]
     ],
     "extra": {
       "router": {
