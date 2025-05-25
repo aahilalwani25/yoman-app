@@ -35,7 +35,7 @@ function OnboardingPage() {
 
 const style = StyleSheet.create({
   imageContainer: {
-    width: scale(270),
+    width: scale(280),
     height: verticalScale(520),
     alignSelf: 'center',
   },

@@ -1,5 +1,6 @@
 {
     "valid-from-date":"*Valid from 27/03 to 01/04 2022. Min stock: 1 unit",
     "login":"Log in",
-    "Skip":"Skip"
+    "skip":"Skip",
+    "search-products": "Search Products"
 }

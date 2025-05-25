@@ -6,6 +6,7 @@ function Index() {
   return (
     <Redirect href={'(onboarding)'}/>
   )
+  
 }
 
 export default Index;

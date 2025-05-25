@@ -24,10 +24,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.reactnativeboilerplate"/>
         <data android:scheme="reactnativeboilerplate"/>
-        <data android:scheme="exp+react-native-boilerplate"/>
-        <data android:scheme="exp+e-commerce-app"/>
+        <data android:scheme="exp+yoman-e-commerce"/>
       </intent-filter>
     </activity>
   </application>

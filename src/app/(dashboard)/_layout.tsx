@@ -4,7 +4,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome'
 
 function Layout() {
   return (
-    <Tabs screenOptions={{
+    <Tabs initialRouteName='(home)' screenOptions={{
       headerShown: false,
       tabBarHideOnKeyboard: true,
       tabBarInactiveTintColor: 'grey',
