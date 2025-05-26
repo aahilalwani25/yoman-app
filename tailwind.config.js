@@ -179,7 +179,8 @@ module.exports = {
         body: undefined,
         mono: undefined,
         roboto: ["Roboto", "sans-serif"],
-        "pp-mori":"PP-Mori"
+        "pp-mori":"PP-Mori",
+        "pp-mori-semibold":"PP-Mori-Semibold"
       },
       fontWeight: {
         extrablack: "950",

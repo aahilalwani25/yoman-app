@@ -13,7 +13,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 function RootLayout() {
   const [loaded, error] = useFonts({
-    "PP-Mori": require("@/src/assets/fonts/pp-mori/PPMori-Regular.otf")
+    "PP-Mori": require("@/src/assets/fonts/pp-mori/PPMori-Regular.otf"),
+    "PP-Mori-Semibold": require('@/src/assets/fonts/pp-mori/PPMori-SemiBold.otf'),
     // SpecialElite: require('@/src/assets/fonts/special-elite/SpecialElite-Regular.ttf'),
     // Rokitt: require('@/src/assets/fonts/rokitt/Rokkitt-VariableFont_wght.ttf'),
     // Poppins: require('@/src/assets/fonts/poppins/Poppins-Regular.ttf'),
@@ -30,7 +31,6 @@ function RootLayout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-
       <GluestackUIProvider mode={"light"}>
         <PersistGate persistor={persistor}>
           <AnimatedSplashLoading isFontsLoading={loaded} error={error}>

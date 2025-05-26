@@ -30,7 +30,7 @@ function UserHomeView({ ...props }: Props) {
   return (
     <View className='h-full w-screen flex bg-white dark:bg-black'>
       <StatusBar />
-      <View className='w-96 self-center h-28 flex flex-row items-center justify-between'>
+      <View className='w-96 self-center h-28 flex flex-row items-center justify-around'>
         <SearchInput placeholder={t('search-products')} />
         <View className='w-12 h-12 bg-[#F7F7F7] rounded-full justify-center items-center z-0'>
           {/* notification dot */}
@@ -40,21 +40,28 @@ function UserHomeView({ ...props }: Props) {
         </View>
       </View>
 
-      <View className='h-fit w-full items-center gap-0'>
-        <Image className='z-0' source={require('@/src/assets/images/sale-banner.png')} />
+      <View className='h-fit w-96 self-center items-center gap-0'>
+        <Image className='z-0 object-contain w-full h-auto' width={100} height={100} source={require('@/src/assets/images/sale-banner.png')} />
         <Text className='font-pp-mori text-[10px] z-10 -top-3'>{t('valid-from-date')}</Text>
       </View>
 
-      <View className='w-full h-96'>
+      <View className='w-full pl-8 h-20 items-center flex justify-center self-center'>
         <FlashList
           data={props?.categories!}
           ItemSeparatorComponent={itemSeperator}
-          className='flex gap-20'
+          //className='flex gap-20'
+          contentContainerClassName='items-center flex justify-center'
           horizontal
           renderItem={renderProductCategories}
           estimatedItemSize={10}
           estimatedListSize={{width:100,height:100}}
         />
+      </View>
+
+      <View className='flex w-96 h-auto bg-black self-center'>
+        <View>
+          <Text>{t('hot-sales')}</Text>
+        </View>
       </View>
     </View>
   )

@@ -12,8 +12,8 @@ function OnboardingPage() {
   const router = useRouter();
 
   const redirectTo = useCallback(() => {
-    router.push('(dashboard)')
-  }, []);
+    router.push('(dashboard)/home')
+  },[]);
 
   return (
     <LinearGradient colors={['#CE048C', '#4D0A8E']} className='w-screen h-full items-center justify-center flex gap-10'>
