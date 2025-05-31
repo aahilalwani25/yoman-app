@@ -1,6 +1,6 @@
 import SvgNotificationIcon from '@/src/assets/svg/icons/notification-icon';
 import SearchInput from '@/src/components/search'
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Image, StatusBar, Text, View } from 'react-native'
 import { FlashList } from '@shopify/flash-list';
@@ -35,7 +35,7 @@ function UserHomeView({ ...props }: Props) {
         <View className='w-12 h-12 bg-[#F7F7F7] rounded-full justify-center items-center z-0'>
           {/* notification dot */}
           <View className='bg-red-600 w-3 h-3 rounded-full z-10 right-0 absolute top-0' />
-          {/* notification icon */}
+          {/* notification icon */} 
           <SvgNotificationIcon />
         </View>
       </View>
@@ -58,9 +58,10 @@ function UserHomeView({ ...props }: Props) {
         />
       </View>
 
-      <View className='flex w-96 h-auto bg-black self-center'>
+      <View className='flex w-96 h-auto self-center'>
         <View>
-          <Text>{t('hot-sales')}</Text>
+          <Text className='font-pp-mori-semibold text-lg'>{t('hot-sales')}</Text>
+          
         </View>
       </View>
     </View>

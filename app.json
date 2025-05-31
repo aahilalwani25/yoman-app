@@ -9,7 +9,8 @@
     "version": "1.0.0",
     "jsEngine": "hermes",
     "android": {
-      "package": "com.reactnativeboilerplate"
+      "package": "com.reactnativeboilerplate",
+      "edgeToEdgeEnabled": true
     },
     "ios": {
       "bundleIdentifier": "com.reactnativeboilerplate"
