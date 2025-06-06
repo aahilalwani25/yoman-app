@@ -22,10 +22,10 @@ function UserHomeView({ ...props }: Props) {
       </View>
     ), [props.categories]);
 
-  const renderProductData = //useCallback(
+  const renderProductData = useCallback(
     ({ item }: { item: ProductResponse }) => (
       <ProductCard {...item} />
-    )//,[props.productData])
+    ),[props.productData])
 
 
   const itemSeperator = //useCallback(
@@ -64,22 +64,24 @@ function UserHomeView({ ...props }: Props) {
           />
         </View>
 
-        <View className='flex w-full h-auto self-center'>
-          <View>
-            <Text className='font-pp-mori-semibold text-lg'>{t('hot-sales')}</Text>
+        <View className='gap-10'>
+          <View className='flex w-full h-auto self-center'>
+            <View>
+              <Text className='font-pp-mori-semibold text-lg'>{t('hot-sales')}</Text>
+            </View>
           </View>
+          <FlashList
+            data={props.productData}
+            renderItem={renderProductData}
+            estimatedListSize={{ width: 200, height: 200 }}
+            estimatedItemSize={100}
+            ItemSeparatorComponent={() => <View className='h-5 w-5' />}
+            numColumns={2}
+            className='flex w-full'
+            showsVerticalScrollIndicator={false}
+            contentContainerClassName='justify-between items-center'
+          />
         </View>
-        <FlashList
-          data={props.productData}
-          renderItem={renderProductData}
-          estimatedListSize={{ width: 200, height: 200 }}
-          estimatedItemSize={100}
-          ItemSeparatorComponent={() => <View className='h-5 w-5' />}
-          numColumns={2}
-          className='flex w-full'
-          showsVerticalScrollIndicator={false}
-          contentContainerClassName='justify-between items-center'
-        />
       </ScrollView>
     </View>
   )
