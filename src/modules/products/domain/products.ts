@@ -5,6 +5,7 @@ export interface ProductResponse{
     description: string
     category: Categories,
     rating: Rating
+    image: string
 }
 
 export interface Rating{

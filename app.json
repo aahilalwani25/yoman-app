@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "react-native-ecommerce-app",
+    "name": "Yoman",
     "orientation": "portrait",
     "newArchEnabled": true,
     "userInterfaceStyle": "dark",
@@ -8,6 +8,12 @@
     "scheme": "reactnativeboilerplate",
     "version": "1.0.0",
     "jsEngine": "hermes",
+    "icon": "./src/assets/splash-icon.png",
+    "splash": {
+      "image": "./src/assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "android": {
       "package": "com.reactnativeboilerplate",
       "edgeToEdgeEnabled": true
@@ -36,9 +42,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "b3b03e13-488e-45a4-a70e-3ea74b9b743d"
+        "projectId": "27b6b398-1c4b-4ec6-a41a-af95b97ebe9e"
       }
     },
-    "owner": "aahil12072"
+    "owner": "aahilalwani"
   }
 }
