@@ -15,16 +15,17 @@
       "backgroundColor": "#ffffff"
     },
     "android": {
-      "package": "com.reactnativeboilerplate",
+      "package": "com.yoman",
       "edgeToEdgeEnabled": true
     },
     "ios": {
-      "bundleIdentifier": "com.reactnativeboilerplate"
+      "bundleIdentifier": "com.yoman"
     },
     "plugins": [
       "expo-router",
       "expo-secure-store",
       "expo-font",
+      "expo-notifications",
       [
         "expo-splash-screen",
         {
@@ -36,6 +37,7 @@
           "imageWidth": 200
         }
       ]
+
     ],
     "extra": {
       "router": {

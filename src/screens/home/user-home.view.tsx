@@ -6,6 +6,7 @@ import { Image, ScrollView, Text, View } from 'react-native'
 import { FlashList } from '@shopify/flash-list';
 import { Categories, ProductResponse } from '@/src/modules/products/domain/products';
 import ProductCard from '@/src/components/product-card';
+import GetAllProductContainer from '@/src/modules/products/application/get-all-products/get-all-products.container';
 
 interface Props {
   productData: ProductResponse[]
@@ -70,17 +71,7 @@ function UserHomeView({ ...props }: Props) {
               <Text className='font-pp-mori-semibold text-lg'>{t('hot-sales')}</Text>
             </View>
           </View>
-          <FlashList
-            data={props.productData}
-            renderItem={renderProductData}
-            estimatedListSize={{ width: 200, height: 200 }}
-            estimatedItemSize={100}
-            ItemSeparatorComponent={() => <View className='h-5 w-5' />}
-            numColumns={2}
-            className='flex w-full'
-            showsVerticalScrollIndicator={false}
-            contentContainerClassName='justify-between items-center'
-          />
+          <GetAllProductContainer productData={props.productData}/>
         </View>
       </ScrollView>
     </View>

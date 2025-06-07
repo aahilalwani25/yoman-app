@@ -7,7 +7,7 @@ function Layout() {
       headerShown: false
     }}>
         <Stack.Screen name='home'/>
-        <Stack.Screen name='product-details'/>
+        <Stack.Screen name='[productId]/index'/>
     </Stack>
   )
 }
