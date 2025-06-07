@@ -24,7 +24,7 @@ function GetAllProductsView({ ...props }: Props) {
             estimatedItemSize={100}
             ItemSeparatorComponent={() => <View className='h-5 w-5' />}
             numColumns={2}
-            className='flex w-full'
+            className='flex w-full h-auto pb-36'
             showsVerticalScrollIndicator={false}
             contentContainerClassName='justify-between items-center'
         />

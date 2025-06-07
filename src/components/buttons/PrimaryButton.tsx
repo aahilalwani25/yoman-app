@@ -7,11 +7,13 @@ interface Props {
     title: string
     onPress?: (event: GestureResponderEvent) => void
     backgroundColor?: string
-    buttonWidth?: "sm" | "md" | "lg" | "xl"
-    textColor?:string
+    buttonWidth?: "sm" | "md" | "lg" | "xl" | "full"
+    textColor?: string
+    btnClassName?: string
+    textClassName?: string
 }
 
-function PrimaryButton({ backgroundColor = COLORS.primary.light.color, textColor="#ffffff" , ...props }: Props) {
+function PrimaryButton({ backgroundColor = COLORS.primary.light.color, textColor = "#ffffff", ...props }: Props) {
     const [btnWidth, setBtnWidth] = useState("w-32");
 
     useEffect(() => {
@@ -29,6 +31,8 @@ function PrimaryButton({ backgroundColor = COLORS.primary.light.color, textColor
                 case "xl":
                     setBtnWidth("w-96");
                     break;
+                case "full":
+                    setBtnWidth("w-full");
                 default:
                     setBtnWidth("w-32");
                     break;
@@ -37,8 +41,8 @@ function PrimaryButton({ backgroundColor = COLORS.primary.light.color, textColor
     }, [props.buttonWidth])
 
     return (
-        <Button onPress={props.onPress} className={`${btnWidth} rounded-full h-12`} style={{ backgroundColor }}>
-            <Text style={{ fontFamily: "PP-Mori", color: textColor }} className='font-bold'>{props.title?.toLocaleUpperCase()}</Text>
+        <Button onPress={props.onPress} className={`${btnWidth} rounded-full h-12 ${props.btnClassName}`} style={{ backgroundColor }}>
+            <Text style={{ fontFamily: "PP-Mori", color: textColor }} className={props.textClassName}>{props.title?.toLocaleUpperCase()}</Text>
         </Button>
     )
 }

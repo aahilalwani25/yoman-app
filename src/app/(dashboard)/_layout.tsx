@@ -1,6 +1,7 @@
 import { Tabs } from 'expo-router'
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
+import { COLORS } from '@/src/config/constants'
 
 function Layout() {
   return (
@@ -8,6 +9,8 @@ function Layout() {
       headerShown: false,
       tabBarHideOnKeyboard: true,
       tabBarInactiveTintColor: 'grey',
+      tabBarActiveTintColor: COLORS.primary.color,
+      tabBarActiveBackgroundColor:"",
       tabBarStyle: { position: 'absolute' },
     }}>
       <Tabs.Screen name='(home)'

@@ -4,5 +4,7 @@
     "skip":"Skip",
     "search-products": "Search Products",
     "hot-sales":"Hot Sales",
-    "includes-tax":"Including taxes and duties"
+    "includes-tax":"Including taxes and duties",
+    "add-to-cart":"Add to Cart",
+    "buy-now":"Buy Now"
 }
