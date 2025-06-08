@@ -1,6 +1,5 @@
 import { Tabs } from 'expo-router'
-import React from 'react'
-import FontAwesome from '@expo/vector-icons/FontAwesome'
+import React, { useCallback } from 'react'
 import { COLORS } from '@/src/config/constants'
 import { Text, View } from 'react-native'
 import { scale, verticalScale } from 'react-native-size-matters'
@@ -10,37 +9,58 @@ import SvgProfileIcon from '@/src/assets/svg/icons/profile-icon'
 import SvgSaveIcon from '@/src/assets/svg/icons/save-icon'
 import { capitalizeFirstWord } from '@/src/utils/capitalize-first-letter'
 
-
-const TabBarItem = ({ name, focused, color }: { name: string, focused: boolean, color: string }) => {
-  let iconComponent: React.JSX.Element | null = null;
-  switch (name) {
-    case "home":
-      iconComponent = <SvgHomeIcon focused={focused} />;
-      break;
-    case "cart":
-      iconComponent = <SvgCartIcon focused={focused} />;
-      break;
-    case "save":
-      iconComponent = <SvgSaveIcon focused={focused} />
-      break;
-    case "profile":
-      iconComponent = <SvgProfileIcon focused={focused} />
-      break;
-    default:
-      console.error("no such icon exist in tab. please recheck name")
+const tabs={
+  home:{
+    name:"home",
+    href:'(home)'
+  },
+  cart:{
+    name:"cart",
+    href:'(cart)'
+  },
+  profile:{
+    name:"profile",
+    href:'(profile)'
+  },
+  save: {
+    name:"save",
+    href:'(save)'
   }
-  return (
-    <View className={`${focused ? "w-32" : "w-20"} h-10 flex flex-row items-center justify-center rounded-full mt-10`}
-      style={{
-        backgroundColor: focused ? 'rgba(255, 85, 0, 0.1)' : 'transparent',
-      }}
-    >
-      {iconComponent} <Text className={`font-pp-mori-semibold text-[${COLORS.primary.color}]`}>{focused ? capitalizeFirstWord(name) : ''}</Text>
-    </View>
-  )
-};
+}
 
 function Layout() {
+
+  const TabBarItem = //useCallback(
+    ({ name, focused }: { name: string, focused: boolean }) => {
+    let iconComponent: React.JSX.Element | null = null;
+    switch (name) {
+      case tabs.home.name:
+        iconComponent = <SvgHomeIcon focused={focused} />;
+        break;
+      case tabs.cart.name:
+        iconComponent = <SvgCartIcon focused={focused} />;
+        break;
+      case tabs.save.name:
+        iconComponent = <SvgSaveIcon focused={focused} />
+        break;
+      case tabs.profile.name:
+        iconComponent = <SvgProfileIcon focused={focused} />
+        break;
+      default:
+        console.error("no such icon exist in tab. please recheck name")
+    }
+    return (
+      <View className={`${focused ? "w-32" : "w-20"} h-10 flex flex-row items-center justify-center rounded-full mt-5`}
+        style={{
+          backgroundColor: focused ? 'rgba(255, 85, 0, 0.1)' : 'transparent',
+        }}
+      >
+        {iconComponent} <Text className={`font-pp-mori-semibold`}>{focused ? capitalizeFirstWord(name) : null}</Text>
+      </View>
+    )
+  }//,[]);
+
+
   return (
     <Tabs initialRouteName='(home)' screenOptions={{
       headerShown: false,
@@ -48,27 +68,27 @@ function Layout() {
       tabBarHideOnKeyboard: true,
       tabBarInactiveTintColor: 'grey',
       tabBarActiveTintColor: COLORS.primary.color,
-      tabBarStyle: { position: 'absolute', borderRadius: 20, height: verticalScale(100) },
+      tabBarStyle: { position: 'absolute', borderRadius: 20, height: verticalScale(90) },
     }}>
-      <Tabs.Screen name='(home)'
+      <Tabs.Screen name={tabs.home.href}
         options={{
           title: '',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarItem name="home" focused={focused} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabBarItem name={tabs.home.name} focused={focused}/>
           ),
         }} />
-      <Tabs.Screen name='(cart)'
+      <Tabs.Screen name={tabs.cart.href}
         options={{
           title: '',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarItem name="cart" focused={focused} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabBarItem name={tabs.cart.name} focused={focused} />
           ),
         }} />
-      <Tabs.Screen name='(profile)'
+      <Tabs.Screen name={tabs.profile.href}
         options={{
           title: '',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarItem name="profile" focused={focused} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabBarItem name={tabs.profile.name} focused={focused} />
           ),
         }} />
     </Tabs>
