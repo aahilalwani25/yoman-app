@@ -1,7 +1,13 @@
 import * as React from "react"
 import { scale, verticalScale } from "react-native-size-matters"
-import Svg, { SvgProps, Path } from "react-native-svg"
-const SvgComponent = (props: SvgProps) => (
+import Svg, { SvgProps, Path } from "react-native-svg";
+
+
+interface Props extends SvgProps{
+    focused:boolean
+}
+
+const SvgSaveIcon = (props: Props) => (
     <Svg
         width={scale(24)}
         height={verticalScale(24)}
@@ -23,4 +29,4 @@ const SvgComponent = (props: SvgProps) => (
         />
     </Svg>
 )
-export default SvgComponent
+export default SvgSaveIcon

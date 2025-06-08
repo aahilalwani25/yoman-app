@@ -1,5 +1,3 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
 # dependencies
 node_modules/
 
@@ -24,7 +22,6 @@ expo-env.d.ts
 npm-debug.*
 yarn-debug.*
 yarn-error.*
-yarn.lock
 
 # macOS
 .DS_Store
@@ -36,3 +33,15 @@ yarn.lock
 
 # typescript
 *.tsbuildinfo
+
+./eas.json
+.kotlin
+
+/docs
+
+# Ignore native directories
+/android
+/ios
+
+# Ignore test coverage reports
+/coverage
