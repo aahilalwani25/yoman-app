@@ -45,7 +45,7 @@ function ProductDetailView({ ...props }: ProductResponse) {
                     <Text className='font-pp-mori text-lg'>{props.description}</Text>
                 </View>
 
-                <View className='flex items-center justify-around h-40 bottom-28 absolute'>
+                <View className='flex items-center justify-around h-40 bottom-32 absolute'>
                     <PrimaryButton title={t('add-to-cart')} btnClassName='!h-16' backgroundColor={COLORS.primary.light.text} buttonWidth='xl' />
                     <PrimaryButton title={t('buy-now')} btnClassName='!h-16' buttonWidth='xl' />
                 </View>

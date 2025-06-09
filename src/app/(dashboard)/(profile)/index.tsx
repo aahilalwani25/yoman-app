@@ -1,11 +1,9 @@
+import GetUserProfileContainer from '@/src/modules/user/application/get-user-profile/get-user-profile.container'
 import React from 'react'
-import { View } from 'react-native'
 
 function ProfileScreen() {
   return (
-    <View>
-      
-    </View>
+    <GetUserProfileContainer/>
   )
 }
 

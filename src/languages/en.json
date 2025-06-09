@@ -6,5 +6,11 @@
     "hot-sales":"Hot Sales",
     "includes-tax":"Including taxes and duties",
     "add-to-cart":"Add to Cart",
-    "buy-now":"Buy Now"
+    "buy-now":"Buy Now",
+    "wallet":"Wallet",
+    "orders":"Orders",
+    "your-favourites":"Your Favourites",
+    "payment":"Payment",
+    "tell-your-friends":"Tell your Friends",
+    "settings":"Settings"
 }

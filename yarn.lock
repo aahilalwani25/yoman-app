@@ -958,6 +958,11 @@
     resolve-from "^5.0.0"
     semver "^7.6.0"
 
+"@expo/html-elements@0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@expo/html-elements/-/html-elements-0.4.2.tgz#4e9f6b9250af8d0befe3242fd42704cca2421e0e"
+  integrity sha512-lNioCgdtOrCMMqzHY+PCTdyuWBTU4yMBlOzPSkS4YFIWt9bq0zexM2ZJkpybTXmowNdE3zHO93xxAmiA2yDi2w==
+
 "@expo/html-elements@latest":
   version "0.12.5"
   resolved "https://registry.yarnpkg.com/@expo/html-elements/-/html-elements-0.12.5.tgz#be7e7af9f2be6d3f1aa3ec2e7ae1c121c91a9aa1"
@@ -1207,7 +1212,7 @@
   resolved "https://registry.yarnpkg.com/@gluestack-ui/alert/-/alert-0.1.16.tgz#cede162e04c3dcb07a3da797221852bb7c127311"
   integrity sha512-vE0litmicuKFJFp9TY3mRuZmyH/E24IdHlC0f3FZjfa+AzeOS+bZdKMRix2EYkvBGrA6uNffWUuHeXWQGMRVJQ==
 
-"@gluestack-ui/avatar@0.1.18":
+"@gluestack-ui/avatar@0.1.18", "@gluestack-ui/avatar@^0.1.18":
   version "0.1.18"
   resolved "https://registry.yarnpkg.com/@gluestack-ui/avatar/-/avatar-0.1.18.tgz#bb890a7b889060e01faf549f59a47d11c04ada1c"
   integrity sha512-VA9XwtavYLYCWrjxHc2u9gRpV97cPRcr/6KJ4tLiMiQbiRL1b4zckiL+/F39fB6xjUOUQHl3Fjo/Yd8swa0MBg==
