@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button } from '../ui/button'
+import { Button, ButtonText } from '../ui/button'
 import { GestureResponderEvent, Text } from 'react-native'
 import { COLORS } from '@/src/config/constants'
 
@@ -42,7 +42,7 @@ function PrimaryButton({ backgroundColor = COLORS.primary.light.color, textColor
 
     return (
         <Button onPress={props.onPress} className={`${btnWidth} rounded-full h-12 ${props.btnClassName}`} style={{ backgroundColor }}>
-            <Text style={{ fontFamily: "PP-Mori", color: textColor }} className={props.textClassName}>{props.title?.toLocaleUpperCase()}</Text>
+            <ButtonText style={{ fontFamily: "PP-Mori", color: textColor }} className={props.textClassName}>{props.title?.toLocaleUpperCase()}</ButtonText>
         </Button>
     )
 }

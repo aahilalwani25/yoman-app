@@ -41,7 +41,7 @@ function Layout() {
         iconComponent = <SvgCartIcon focused={focused} />;
         break;
       case tabs.save.name:
-        iconComponent = <SvgSaveIcon focused={focused} />
+        iconComponent = <SvgSaveIcon />
         break;
       case tabs.profile.name:
         iconComponent = <SvgProfileIcon focused={focused} />
@@ -55,7 +55,7 @@ function Layout() {
           backgroundColor: focused ? 'rgba(255, 85, 0, 0.1)' : 'transparent',
         }}
       >
-        {iconComponent} <Text className={`font-pp-mori-semibold`}>{focused ? capitalizeFirstWord(name) : null}</Text>
+        {iconComponent} <Text className={`font-pp-mori-semibold`}>{focused ? capitalizeFirstWord(name) : ""}</Text>
       </View>
     )
   }//,[]);

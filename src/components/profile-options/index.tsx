@@ -51,10 +51,9 @@ function ProfileOptionsContainer() {
 
   return (
     <FlashList
-      className='w-full h-40'
       data={profileOptions}
       renderItem={renderProfileOptions}
-      estimatedItemSize={100}
+      estimatedItemSize={4}
       ItemSeparatorComponent={() => <View className='w-20 h-2' />}
       contentContainerClassName='flex items-center justify-center'
       estimatedListSize={{ width: 100, height: 100 }} />

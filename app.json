@@ -19,7 +19,7 @@
       "edgeToEdgeEnabled": true
     },
     "ios": {
-      "bundleIdentifier": "com.yoman"
+      "bundleIdentifier": "com.reactnativeboilerplate"
     },
     "plugins": [
       "expo-router",

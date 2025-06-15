@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import { Image, ScrollView, Text, View } from 'react-native'
 import { FlashList } from '@shopify/flash-list';
 import { Categories, ProductResponse } from '@/src/modules/products/domain/products';
-import ProductCard from '@/src/components/product-card';
 import GetAllProductContainer from '@/src/modules/products/application/get-all-products/get-all-products.container';
 
 interface Props {
@@ -23,18 +22,12 @@ function UserHomeView({ ...props }: Props) {
       </View>
     ), [props.categories]);
 
-  const renderProductData = useCallback(
-    ({ item }: { item: ProductResponse }) => (
-      <ProductCard {...item} />
-    ),[props.productData])
-
-
   const itemSeperator = //useCallback(
     () => (<View className='h-2 w-2' />)
   //,[])
 
   return (
-    <View className='h-full w-screen flex bg-white dark:bg-black'>
+    <View className='h-full w-screen flex bg-white'>
       <ScrollView className='w-96 flex h-full self-center' showsVerticalScrollIndicator={false}>
         <View className='w-full self-center h-28 flex flex-row items-center justify-around'>
           <SearchInput placeholder={t('search-products')} />

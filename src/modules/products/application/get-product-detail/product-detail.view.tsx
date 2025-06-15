@@ -6,7 +6,7 @@ import { scale, verticalScale } from 'react-native-size-matters'
 import { useTranslation } from 'react-i18next'
 import { Rating } from 'react-native-ratings'
 import { StarIcon } from '@/src/components/ui/icon'
-import PrimaryButton from '@/src/components/buttons/PrimaryButton'
+import PrimaryButton from '@/src/components/buttons/primary-button'
 import { COLORS } from '@/src/config/constants'
 
 function ProductDetailView({ ...props }: ProductResponse) {
