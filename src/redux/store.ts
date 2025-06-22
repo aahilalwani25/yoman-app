@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, createStore } from "redux";
 import { thunk } from "redux-thunk";
 import { persistStore, persistReducer } from 'redux-persist'
 import * as SecureStore from "expo-secure-store"
+import customerProductCartSlice from "./cart/actions";
 
 export const reduxStorage = {
     setItem: async(key:any, value:any) => {
@@ -27,10 +28,12 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    
+    cartReducer: customerProductCartSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = createStore(persistedReducer, applyMiddleware(thunk));
 export const persistor= persistStore(store);
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

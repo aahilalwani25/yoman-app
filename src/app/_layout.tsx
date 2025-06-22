@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 import React from "react";
 import { GluestackUIProvider } from "@/src/components/ui/gluestack-ui-provider";
 import { PersistGate } from 'redux-persist/es/integration/react';
-import { persistor } from '../redux/store';
+import { persistor, store } from '../redux/store';
 import { useFonts } from 'expo-font'
 import { AnimatedSplashLoading } from '../components/animated.splashscreen.loading';
 import i18next from "i18next";
@@ -12,6 +12,7 @@ import { languageResources } from "@/src/languages/language.resources";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Box } from '../components/ui/box';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
 
 function RootLayout() {
   const [loaded, error] = useFonts({
@@ -38,15 +39,17 @@ function RootLayout() {
     <Box style={{ flex: 1, paddingTop: inset.top, backgroundColor: 'transparent' }}>
       <QueryClientProvider client={queryClient}>
         <GluestackUIProvider mode={"light"}>
-          <PersistGate persistor={persistor}>
-            <AnimatedSplashLoading isFontsLoading={loaded} error={error}>
-              <Stack screenOptions={{ headerShown: false, statusBarAnimation: 'slide', statusBarBackgroundColor: "black" }}>
-                <Stack.Screen name="index" />
-                <Stack.Screen name="(onboarding)" />
-                <Stack.Screen name='(dashboard)' />
-              </Stack>
-            </AnimatedSplashLoading>
-          </PersistGate>
+          <Provider store={store}>
+            <PersistGate persistor={persistor}>
+              <AnimatedSplashLoading isFontsLoading={loaded} error={error}>
+                <Stack screenOptions={{ headerShown: false, statusBarAnimation: 'slide', statusBarBackgroundColor: "black" }}>
+                  <Stack.Screen name="index" />
+                  <Stack.Screen name="(onboarding)" />
+                  <Stack.Screen name='(dashboard)' />
+                </Stack>
+              </AnimatedSplashLoading>
+            </PersistGate>
+          </Provider>
         </GluestackUIProvider>
       </QueryClientProvider>
     </Box>

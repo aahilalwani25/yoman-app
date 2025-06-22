@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Button, ButtonText } from '../ui/button'
-import { GestureResponderEvent, Text } from 'react-native'
+import { GestureResponderEvent, StyleSheet, Text, ViewStyle } from 'react-native'
 import { COLORS } from '@/src/config/constants'
+import { StyleProp } from 'react-native'
 
 interface Props {
     title: string
+    btnStyle?: StyleProp<ViewStyle>
     onPress?: (event: GestureResponderEvent) => void
     backgroundColor?: string
     buttonWidth?: "sm" | "md" | "lg" | "xl" | "full"
     textColor?: string
     btnClassName?: string
     textClassName?: string
+    isDisabled?: boolean
 }
 
-function PrimaryButton({ backgroundColor = COLORS.primary.light.color, textColor = "#ffffff", ...props }: Props) {
+function PrimaryButton({ backgroundColor = COLORS.primary.light.color, isDisabled=false, textColor = "#ffffff", ...props }: Props) {
     const [btnWidth, setBtnWidth] = useState("w-32");
 
     useEffect(() => {
@@ -41,7 +44,7 @@ function PrimaryButton({ backgroundColor = COLORS.primary.light.color, textColor
     }, [props.buttonWidth])
 
     return (
-        <Button onPress={props.onPress} className={`${btnWidth} rounded-full h-12 ${props.btnClassName}`} style={{ backgroundColor }}>
+        <Button isDisabled={isDisabled} onPress={props.onPress} className={`${btnWidth} rounded-full h-12 ${props.btnClassName}`} style={[{ backgroundColor }, props.btnStyle]}>
             <ButtonText style={{ fontFamily: "PP-Mori", color: textColor }} className={props.textClassName}>{props.title?.toLocaleUpperCase()}</ButtonText>
         </Button>
     )

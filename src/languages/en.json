@@ -12,5 +12,8 @@
     "your-favourites":"Your Favourites",
     "payment":"Payment History",
     "tell-your-friends":"Tell your Friends",
-    "settings":"Settings"
+    "settings":"Settings",
+    "checkout":"Checkout",
+    "my-cart": "My Cart",
+    "total":"Total"
 }

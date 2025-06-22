@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { COLORS } from '@/src/config/constants'
 import ProfileOptionsContainer from '@/src/components/profile-options'
 import PrimaryButton from '@/src/components/buttons/primary-button'
+import { verticalScale } from 'react-native-size-matters'
 
 
 function GetUserProfileView({ ...props }: UserInfoResponse) {
@@ -49,7 +50,7 @@ function GetUserProfileView({ ...props }: UserInfoResponse) {
                     <ProfileOptionsContainer />
                 </View>
 
-                <View className='bottom-40 absolute w-full'>
+                <View style={{bottom: verticalScale(100), position:'absolute'}} className='w-full'>
                     <PrimaryButton title='LOG OUT' backgroundColor='red' onPress={() => { }} textColor='white' buttonWidth='xl' />
                 </View>
             </VStack>

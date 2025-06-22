@@ -5,6 +5,7 @@ import Svg, { SvgProps, Path, Rect } from "react-native-svg"
 const SvgWalletIcon = (props: SvgProps) => (
   <Svg
     width={scale(25)}
+    viewBox={`0 0 ${scale(28)} ${verticalScale(26)}`}
     height={verticalScale(24)}
     fill="none"
     {...props}
