@@ -37,8 +37,8 @@ export class ProductHttp implements ProductOutput{
     async searchProducts(searchText: string): Promise<ProductResponse[]>{
         const result= await this.getAllProducts();
         if(result.length>0){
-            result.filter(product=>product.title.toLowerCase().includes(searchText.toLowerCase()));
-            return result;
+            const filteredResult= result.filter(product=>product.title.toLowerCase().includes(searchText.toLowerCase()));
+            return filteredResult;
         }
         return []
     }

@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import UserHomeView from './user-home.view'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { getAllProducts, searchProducts } from '@/src/modules/products/domain/products.action'

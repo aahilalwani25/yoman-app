@@ -1,9 +1,7 @@
-import { outputs } from '@/src/config/outputs';
 import { FlashList } from '@shopify/flash-list';
-import { useMutation } from '@tanstack/react-query';
 import { ProductResponse } from '@/src/modules/products/domain/products'
 import React from 'react'
-import { GestureResponderEvent, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 
 interface Props {
     searchedData: ProductResponse[] | undefined
