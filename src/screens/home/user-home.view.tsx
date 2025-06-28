@@ -10,6 +10,8 @@ import GetAllProductContainer from '@/src/modules/products/application/get-all-p
 interface Props {
   productData: ProductResponse[]
   categories: Categories[]
+  setSearchText: (value:string)=>void
+  searchedData: ProductResponse[] | undefined
 }
 ;
 function UserHomeView({ ...props }: Props) {
@@ -22,15 +24,18 @@ function UserHomeView({ ...props }: Props) {
       </View>
     ), [props.categories]);
 
-  const itemSeperator = //useCallback(
+  const itemSeperator = useCallback(
     () => (<View className='h-2 w-2' />)
-  //,[])
+  ,[])
 
   return (
     <View className='h-full w-screen flex bg-white'>
       <ScrollView className='w-96 flex h-full self-center' showsVerticalScrollIndicator={false}>
-        <View className='w-full self-center h-28 flex flex-row items-center justify-around'>
-          <SearchInput placeholder={t('search-products')} />
+        <View className='w-full self-center flex flex-row items-center justify-around pt-10 relative'>
+          <SearchInput
+            placeholder={t('search-products')}
+            searchedData={props.searchedData!}
+            onChangeText={(text) => props.setSearchText(text)} />
           <View className='w-12 h-12 bg-[#F7F7F7] rounded-full justify-center items-center z-0'>
             {/* notification dot */}
             <View className='bg-red-600 w-3 h-3 rounded-full z-10 right-0 absolute top-0' />
@@ -39,7 +44,7 @@ function UserHomeView({ ...props }: Props) {
           </View>
         </View>
 
-        <View className='h-fit w-full self-center items-center gap-0'>
+        <View className='h-fit w-full self-center items-center gap-0 z-20'>
           <Image resizeMode='contain' className='z-0 object-contain w-full h-auto' width={100} height={100} source={require('@/src/assets/images/sale-banner.png')} />
           <Text className='font-pp-mori text-[10px] z-10 -top-3'>{t('valid-from-date')}</Text>
         </View>
@@ -64,7 +69,7 @@ function UserHomeView({ ...props }: Props) {
               <Text className='font-pp-mori-semibold text-lg'>{t('hot-sales')}</Text>
             </View>
           </View>
-          <GetAllProductContainer productData={props.productData}/>
+          <GetAllProductContainer productData={props.productData} />
         </View>
       </ScrollView>
     </View>

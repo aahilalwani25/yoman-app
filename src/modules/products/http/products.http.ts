@@ -24,8 +24,23 @@ export class ProductHttp implements ProductOutput{
         }
     }
 
-    getProductsByCategory(category: Categories): Promise<ProductResponse> {
-        throw new Error("Method not implemented.");
+    async getProductsByCategory(category: Categories): Promise<ProductResponse> {
+        try{
+            const result= await publicAxios.get(`products/category/${category}`);
+            return result?.data;
+        }catch(e:any){
+            console.log(e);
+            throw new Error(e);
+        }
+    }
+
+    async searchProducts(searchText: string): Promise<ProductResponse[]>{
+        const result= await this.getAllProducts();
+        if(result.length>0){
+            result.filter(product=>product.title.toLowerCase().includes(searchText.toLowerCase()));
+            return result;
+        }
+        return []
     }
 
     
