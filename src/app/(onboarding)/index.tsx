@@ -16,7 +16,7 @@ function OnboardingPage() {
   },[]);
 
   return (
-    <LinearGradient colors={['#CE048C', '#4D0A8E']} className='w-screen h-full items-center justify-center flex'>
+    <LinearGradient colors={['#CE048C', '#4D0A8E']} className='w-screen h-screen items-center justify-center flex'>
       <View>
         <View style={style.imageContainer}>
           <Image
@@ -27,7 +27,7 @@ function OnboardingPage() {
         <Text style={{ fontFamily: "PP-Mori" }} className='text-white font-thin text-center text-sm'>{t("valid-from-date")}</Text>
       </View>
       <View className="flex justify-center items-center">
-        <PrimaryButton buttonWidth='xl' backgroundColor='white' textColor={COLORS.primary.light.color} title={t('login')} />
+        <PrimaryButton onPress={redirectTo} buttonWidth='xl' backgroundColor='white' textColor={COLORS.primary.light.color} title={t('login')} />
         <PrimaryButton onPress={redirectTo} buttonWidth='xl' backgroundColor='transparent' textColor={'white'} title={t('skip')} />
       </View>
     </LinearGradient>
