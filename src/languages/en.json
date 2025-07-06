@@ -15,5 +15,8 @@
     "settings":"Settings",
     "checkout":"Checkout",
     "my-cart": "My Cart",
-    "total":"Total"
+    "total":"Total",
+    "delivery-charges":"Delivery Charges",
+    "tax":"Tax",
+    "proceed-to-payment":"Proceed to Payment"
 }

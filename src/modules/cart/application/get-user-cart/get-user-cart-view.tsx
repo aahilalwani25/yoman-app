@@ -14,6 +14,7 @@ import Reanimated, {
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import SvgDeleteIcon from '@/src/assets/svg/icons/trash-icon';
+import { useRouter } from 'expo-router';
 
 
 interface Props {
@@ -29,6 +30,7 @@ interface Props {
 function GetUserCartView({ ...props }: Props) {
 
   const { t } = useTranslation();
+  const router= useRouter();
 
   function DeleteAction(prog: SharedValue<number>, drag: SharedValue<number>, productId: string) {
     const styleAnimation = useAnimatedStyle(() => {
@@ -49,12 +51,10 @@ function GetUserCartView({ ...props }: Props) {
     );
   }
 
-
   const renderCartItem = ({ item }: { item: ProductCart }) => {
     return (
       <ReanimatedSwipeable friction={2}
         enableTrackpadTwoFingerGesture
-        //rightThreshold={100} 
         renderRightActions={(prog,drag)=>DeleteAction(prog,drag,item.productId)}>
 
         <HStack className='w-96 h-32 bg-white rounded-lg items-center'>
@@ -65,6 +65,7 @@ function GetUserCartView({ ...props }: Props) {
               <TouchableOpacity
                 onPress={() => props.decrementQuantityFromCart(item.productId)}
                 className='w-5 h-5 rounded-full items-center justify-center flex'
+                disabled={item.quantity===0}
                 style={{ backgroundColor: 'rgba(255, 85, 0, 0.1)' }}>
                 <Text>-</Text>
               </TouchableOpacity>
@@ -88,9 +89,18 @@ function GetUserCartView({ ...props }: Props) {
     )
   }
 
+  const onCheckout = ()=>{
+    router.navigate({
+      pathname: '/checkout'
+    })
+  }
+
   return (
     <GestureHandlerRootView>
       <ScrollView className='flex flex-1'>
+        <View className='w-full h-20 bg-white items-center justify-center'>
+          <Text className='font-pp-mori-semibold text-2xl'>{t('my-cart')}</Text>
+        </View>
         <View className='w-96 self-center pt-20'>
           <FlashList
             data={props.products}
@@ -113,7 +123,7 @@ function GetUserCartView({ ...props }: Props) {
             <Text className='font-pp-mori-semibold text-2xl'>{t('total')}: </Text>
             <Text className='font-pp-mori-semibold text-2xl text-orange-600'>${props.totalAmount.toFixed(2)}</Text>
           </HStack>
-          <PrimaryButton title={t('checkout')} />
+          <PrimaryButton onPress={onCheckout} title={t('checkout')} />
         </HStack>
       </Box>
     </GestureHandlerRootView>

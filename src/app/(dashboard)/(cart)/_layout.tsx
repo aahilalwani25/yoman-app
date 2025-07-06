@@ -7,6 +7,7 @@ function Layout() {
         headerShown: false
       }}>
         <Stack.Screen name='index'/>
+        <Stack.Screen name='checkout'/>
     </Stack>
   )
 }
