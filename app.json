@@ -16,7 +16,8 @@
     },
     "android": {
       "package": "com.yoman",
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "versionCode": 2
     },
     "ios": {
       "bundleIdentifier": "com.reactnativeboilerplate"
