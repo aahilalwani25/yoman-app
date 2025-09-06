@@ -3,6 +3,7 @@ import { thunk } from "redux-thunk";
 import { persistStore, persistReducer } from 'redux-persist'
 import * as SecureStore from "expo-secure-store"
 import customerProductCartSlice from "./cart/actions";
+import userSlice from './user/action'
 
 export const reduxStorage = {
     setItem: async(key:any, value:any) => {
@@ -28,7 +29,8 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-    cartReducer: customerProductCartSlice
+    cartReducer: customerProductCartSlice,
+    userReducer: userSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

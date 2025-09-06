@@ -11,8 +11,12 @@ function OnboardingPage() {
   const { t } = useTranslation();
   const router = useRouter();
 
-  const redirectTo = useCallback(() => {
+  const redirectToDashboard = useCallback(() => {
     router.push('(dashboard)/home')
+  },[]);
+
+  const redirectToLogin = useCallback(() => {
+    router.push('(auth)/(login)')
   },[]);
 
   return (
@@ -27,8 +31,8 @@ function OnboardingPage() {
         <Text style={{ fontFamily: "PP-Mori" }} className='text-white font-thin text-center text-sm'>{t("valid-from-date")}</Text>
       </View>
       <View className="flex justify-center items-center">
-        <PrimaryButton onPress={redirectTo} buttonWidth='xl' backgroundColor='white' textColor={COLORS.primary.light.color} title={t('login')} />
-        <PrimaryButton onPress={redirectTo} buttonWidth='xl' backgroundColor='transparent' textColor={'white'} title={t('skip')} />
+        <PrimaryButton onPress={redirectToLogin} buttonWidth='xl' backgroundColor='white' textColor={COLORS.primary.light.color} title={t('login')} />
+        <PrimaryButton onPress={redirectToDashboard} buttonWidth='xl' backgroundColor='transparent' textColor={'white'} title={t('skip')} />
       </View>
     </LinearGradient>
   )

@@ -36,6 +36,7 @@ function PrimaryButton({ backgroundColor = COLORS.primary.light.color, isDisable
                     break;
                 case "full":
                     setBtnWidth("w-full");
+                    break;
                 default:
                     setBtnWidth("w-32");
                     break;

@@ -13,6 +13,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Box } from '../components/ui/box';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
+import AuthStack from './(auth)/_layout';
 
 function RootLayout() {
   const [loaded, error] = useFonts({
@@ -32,8 +33,7 @@ function RootLayout() {
     resources: languageResources
   });
 
-  const inset = useSafeAreaInsets()
-
+  const inset = useSafeAreaInsets();
 
   return (
     <Box style={{ flex: 1, paddingTop: inset.top, backgroundColor: 'transparent' }}>
@@ -44,6 +44,7 @@ function RootLayout() {
               <AnimatedSplashLoading isFontsLoading={loaded} error={error}>
                 <Stack screenOptions={{ headerShown: false, statusBarAnimation: 'slide', statusBarBackgroundColor: "black" }}>
                   <Stack.Screen name="index" />
+                  <AuthStack/>
                   <Stack.Screen name="(onboarding)" />
                   <Stack.Screen name='(dashboard)' />
                 </Stack>
