@@ -7,9 +7,11 @@ import z from 'zod/v3'
 import InputField from '@/src/components/input'
 import { useTranslation } from 'react-i18next'
 import PrimaryButton from '@/src/components/buttons/primary-button'
+import SocialAuthButton from '@/src/components/buttons/social-auth-button'
 
 interface Props {
     form: UseFormReturn<z.infer<typeof loginSchema>>
+    handleGoogleSignin: ()=>void
 }
 
 function LoginView({ ...props }: Props) {
@@ -60,7 +62,7 @@ function LoginView({ ...props }: Props) {
 
                     <Text className='font-pp-mori'>OR</Text>
 
-                    
+                    <SocialAuthButton onPress={props.handleGoogleSignin} social='google' title='Signin with Google'/>
                 </Card>
             </KeyboardAvoidingView>
         </View>

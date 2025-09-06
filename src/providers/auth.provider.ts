@@ -6,7 +6,6 @@ import { useAppSelector } from "../redux/hooks";
 
 function AuthProvider() {
     const userState = useAppSelector(state => state?.userReducer);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         if (userState.email && userState.password) {

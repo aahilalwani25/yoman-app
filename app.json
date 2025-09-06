@@ -29,6 +29,12 @@
       "expo-font",
       "expo-notifications",
       [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.573969218744-padni6e94v93ee2q6rdc172v89cug5b2"
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "backgroundColor": "#232323",
@@ -39,7 +45,6 @@
           "imageWidth": 200
         }
       ]
-
     ],
     "extra": {
       "router": {
