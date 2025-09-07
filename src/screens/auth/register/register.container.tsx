@@ -1,14 +1,14 @@
 import React from 'react'
-import LoginView from './login.view'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { loginSchema } from './login.schema'
+import { registerSchema } from './register.schema'
 import { signinWithGoogle } from '@/src/providers/google-auth.provider'
+import RegisterView from './register.view'
 
-function LoginContainer() {
+function RegisterContainer() {
 
   const form = useForm({
-    resolver: zodResolver(loginSchema)
+    resolver: zodResolver(registerSchema)
   });
 
   const handleGoogleSignin = async () => {
@@ -16,10 +16,10 @@ function LoginContainer() {
     console.log(response)
   }
   return (
-    <LoginView
+    <RegisterView
       handleGoogleSignin={handleGoogleSignin}
       form={form} />
   )
 }
 
-export default LoginContainer
+export default RegisterContainer

@@ -2,7 +2,7 @@ import { Card } from '@/src/components/ui/card'
 import React from 'react'
 import { Controller, UseFormReturn } from 'react-hook-form'
 import { Image, KeyboardAvoidingView, Text, View } from 'react-native'
-import { loginSchema } from './login.schema'
+import { registerSchema } from './register.schema'
 import z from 'zod/v3'
 import InputField from '@/src/components/input'
 import { useTranslation } from 'react-i18next'
@@ -12,11 +12,11 @@ import { COLORS } from '@/src/config/constants'
 import { Link, useRouter } from 'expo-router'
 
 interface Props {
-    form: UseFormReturn<z.infer<typeof loginSchema>>
+    form: UseFormReturn<z.infer<typeof registerSchema>>
     handleGoogleSignin: () => void
 }
 
-function LoginView({ ...props }: Props) {
+function RegisterView({ ...props }: Props) {
 
     const { t } = useTranslation();
     const router= useRouter();
@@ -33,14 +33,44 @@ function LoginView({ ...props }: Props) {
 
                     <Controller
                         control={props.form.control}
+                        name="firstName"
+                        render={({ field }) => (
+                            <>
+                                <InputField
+                                    placeholder={t("register-form.form.firstName.placeholder")}
+                                    onChange={field.onChange}
+                                    onBlur={field.onBlur}
+                                    label={t("register-form.form.firstName.label")}
+                                />
+                            </>
+                        )}
+                    />
+
+                    <Controller
+                        control={props.form.control}
+                        name="lastName"
+                        render={({ field }) => (
+                            <>
+                                <InputField
+                                    placeholder={t("register-form.form.lastName.placeholder")}
+                                    onChange={field.onChange}
+                                    onBlur={field.onBlur}
+                                    label={t("register-form.form.lastName.label")}
+                                />
+                            </>
+                        )}
+                    />
+
+                    <Controller
+                        control={props.form.control}
                         name="email"
                         render={({ field }) => (
                             <>
                                 <InputField
-                                    placeholder={t("login-form.form.email.placeholder")}
+                                    placeholder={t("register-form.form.email.placeholder")}
                                     onChange={field.onChange}
                                     onBlur={field.onBlur}
-                                    label={t("login-form.form.email.label")}
+                                    label={t("register-form.form.email.label")}
                                 />
                             </>
                         )}
@@ -52,10 +82,10 @@ function LoginView({ ...props }: Props) {
                         render={({ field }) => (
                             <>
                                 <InputField
-                                    placeholder={t("login-form.form.password.placeholder")}
+                                    placeholder={t("register-form.form.password.placeholder")}
                                     onChange={field.onChange}
                                     onBlur={field.onBlur}
-                                    label={t("login-form.form.password.label")}
+                                    label={t("register-form.form.password.label")}
                                 />
                             </>
                         )}
@@ -68,9 +98,9 @@ function LoginView({ ...props }: Props) {
                     <SocialAuthButton onPress={props.handleGoogleSignin} social='google' title='Signin with Google' />
 
                     <View className='flex flex-row gap-x-1'>
-                        <Text className='font-pp-mori'>Don't have an account?</Text>
-                        <Link href={('/(auth)/(register)')}>
-                            <Text className={`font-pp-mori !text-[${COLORS.primary.light.color}]`}>Create an Account</Text>
+                        <Text className='font-pp-mori'>Already have an account?</Text>
+                        <Link href={('/(auth)/(login)')}>
+                            <Text className={`font-pp-mori !text-[${COLORS.primary.light.color}]`}>Login</Text>
                         </Link>
                     </View>
                 </Card>
@@ -79,4 +109,4 @@ function LoginView({ ...props }: Props) {
     )
 }
 
-export default LoginView
+export default RegisterView
