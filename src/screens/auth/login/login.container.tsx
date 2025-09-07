@@ -3,7 +3,7 @@ import LoginView from './login.view'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema } from './login.schema'
-import { signinWithGoogle } from '@/src/providers/google.auth.provider'
+//import { signinWithGoogle } from '@/src/providers/google.auth.provider'
 
 function LoginContainer() {
 
@@ -12,8 +12,8 @@ function LoginContainer() {
   });
 
   const handleGoogleSignin = async () => {
-    const response = await signinWithGoogle();
-    console.log(response)
+    // const response = await signinWithGoogle();
+    // console.log(response)
   }
   return (
     <LoginView
